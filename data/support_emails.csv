@@ -1,0 +1,6 @@
+email_id,subject,body,sender_email,timestamp,priority
+1,App Crash Report,"Every time I click save, the app crashes. Device: Pixel 6, Android 13",user1@example.com,2025-08-07 06:55:05,Low
+2,Login Issue,"Cannot login since update. Using iPhone 13, iOS 17",user2@example.com,2025-08-09 06:55:05,High
+3,Feature Request: Dark Mode,Would love a dark theme for late night work.,user3@example.com,2025-08-07 06:55:05,Medium
+4,Suggestion for Improvement,"Please improve sync speed. Using Samsung S21, Android 12",user4@example.com,2025-08-06 06:55:05,Low
+5,Data Loss Problem,"Lost notes after sync. Device: iPad Pro, iOS 16",user5@example.com,2025-08-22 06:55:05,Low
