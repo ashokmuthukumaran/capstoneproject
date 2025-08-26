@@ -66,10 +66,33 @@ def main(config_path: str = "config.json"):
     support_csv = files.get("support_emails", "support_emails.csv")
     expected_csv = files.get("expected_classifications", "expected_classifications.csv")
 
-    df_reviews = read_csv_file(reviews_csv) if os.path.exists(reviews_csv) else pd.DataFrame()
-    df_support = read_csv_file(support_csv) if support_csv and os.path.exists(support_csv) else pd.DataFrame()
+    if os.path.exists(reviews_csv):
+        df_reviews = read_csv_file(reviews_csv)
+    else:
+        df_reviews = pd.DataFrame()
+        
+    if support_csv and os.path.exists(support_csv):
+        df_support = read_csv_file(support_csv)
+    else:
+        df_support = pd.DataFrame()
 
     def row_to_ticket(row: pd.Series, source_type: str):
+        """
+        Converts a pandas Series representing a user review or feedback row into a structured ticket object.
+        Args:
+            row (pd.Series): The input row containing review or feedback data.
+            source_type (str): The source type identifier (e.g., "AppStore", "Email").
+        Returns:
+            Ticket: A ticket object created from the row data, containing fields such as ID, source type, category,
+                    priority, title, body, confidence score, and link back to the original review.
+        The function performs the following steps:
+            - Extracts relevant text and metadata from the row.
+            - Classifies the review into categories (Bug, Feature Request, Complaint, Praise, Spam) using Gemini.
+            - For Bugs and Feature Requests, further analyzes severity/impact and extracts technical or feature details.
+            - Maps severity or impact to ticket priority.
+            - Composes a ticket title and body using Gemini.
+            - Returns a ticket object with all relevant information.
+        """
         text = row.get("review_text") or row.get("body") or ""
         rating = row.get("rating", None)
         category, conf, _ = classify_with_gemini(g, text, rating)
@@ -80,7 +103,6 @@ def main(config_path: str = "config.json"):
 
         platform = row.get("platform", row.get("device", "Unknown"))
         version = row.get("app_version", row.get("appVersion", "Unknown"))
-
         if category == "Bug":
             severity, tech_details, _ = analyze_bug_with_gemini(g, text, platform, version)
             details = tech_details
