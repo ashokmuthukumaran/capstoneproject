@@ -1,0 +1,56 @@
+source_id,source_type,category,priority,confidence
+1,App Store Review,Spam,Low,0.95
+2,App Store Review,Praise,Low,0.7
+3,App Store Review,Spam,Low,0.95
+4,App Store Review,Complaint,Medium,0.7
+5,App Store Review,Feature Request,High,0.8
+6,App Store Review,Praise,Low,0.7
+7,App Store Review,Spam,Low,0.95
+8,App Store Review,Bug,Medium,0.75
+9,App Store Review,Praise,Low,0.7
+10,App Store Review,Feature Request,High,0.8
+11,App Store Review,Complaint,Medium,0.7
+12,App Store Review,Complaint,Medium,0.7
+13,App Store Review,Complaint,Medium,0.7
+14,App Store Review,Feature Request,High,0.8
+15,App Store Review,Feature Request,Medium,0.8
+16,App Store Review,Complaint,Medium,0.7
+17,App Store Review,Feature Request,Medium,0.8
+18,App Store Review,Spam,Low,0.95
+19,App Store Review,Praise,Low,0.7
+20,App Store Review,Feature Request,Medium,0.8
+21,App Store Review,Praise,Low,0.7
+22,App Store Review,Praise,Low,0.7
+23,App Store Review,Feature Request,Medium,0.8
+24,App Store Review,Spam,Low,0.95
+25,App Store Review,Complaint,Medium,0.7
+26,App Store Review,Bug,Medium,0.75
+27,App Store Review,Bug,High,0.75
+28,App Store Review,Praise,Low,0.7
+29,App Store Review,Praise,Low,0.7
+30,App Store Review,Complaint,Medium,0.7
+31,App Store Review,Praise,Low,0.7
+32,App Store Review,Spam,Low,0.95
+33,App Store Review,Spam,Low,0.95
+34,App Store Review,Spam,Low,0.95
+35,App Store Review,Bug,Medium,0.75
+36,App Store Review,Praise,Low,0.7
+37,App Store Review,Spam,Low,0.95
+38,App Store Review,Complaint,Medium,0.7
+39,App Store Review,Bug,Medium,0.75
+40,App Store Review,Complaint,Medium,0.7
+41,App Store Review,Bug,Medium,0.75
+42,App Store Review,Spam,Low,0.95
+43,App Store Review,Bug,High,0.75
+44,App Store Review,Feature Request,Medium,0.8
+45,App Store Review,Spam,Low,0.95
+46,App Store Review,Feature Request,Medium,0.8
+47,App Store Review,Praise,Low,0.7
+48,App Store Review,Complaint,Medium,0.7
+49,App Store Review,Spam,Low,0.95
+50,App Store Review,Spam,Low,0.95
+1,Support Email,Bug,High,0.9
+2,Support Email,Bug,High,0.75
+3,Support Email,Feature Request,Low,0.8
+4,Support Email,Other,Low,0.4
+5,Support Email,Other,Low,0.4

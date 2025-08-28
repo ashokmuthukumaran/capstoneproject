@@ -1,0 +1,18 @@
+{
+  "USE_LLM": true,
+  "gemini": {
+    "model": "gemini-1.5-flash",
+    "temperature": 0.2,
+    "top_p": 0.95,
+    "top_k": 40,
+    "api_key": "AIzaSyBi1Ow9-VogHqvaMOpX4Li7jfYVAlJ1O7c"
+  },
+  "files": {
+    "app_store_reviews": "data\\app_store_reviews.csv",
+    "support_emails": "data\\support_emails.csv",
+    "expected_classifications": "data\\expected_classifications.csv",
+    "generated_tickets": "data\\generated_tickets.csv",
+    "processing_log": "data\\processing_log.csv",
+    "metrics": "data\\metrics.csv"
+  }
+} 

@@ -11,7 +11,8 @@ import json
 import pandas as pd
 from typing import Dict, Any
 
-from autogen import AssistantAgent, UserProxyAgent, GroupChat, GroupChatManager
+# from autogen import AssistantAgent, UserProxyAgent, GroupChat, GroupChatManager
+from autogen.agentchat import AssistantAgent, UserProxyAgent, GroupChat, GroupChatManager
 
 from gemini_client import GeminiClient
 from tools_gemini import (
@@ -146,10 +147,12 @@ def main(config_path: str = "config.json"):
 
     # Process app store reviews
     for _, r in df_reviews.iterrows():
+        print(f"Processing App Store Review: {r.get('review_id', '')}")
         t = row_to_ticket(r, "App Store Review")
         td = t.__dict__.copy()
         td = critic_with_gemini(g, td)
         tickets.append(td)
+        print(f"Processed App Store Review: {td.get('source_id', '')}")
         processing_rows.append({
             "source_id": td["source_id"],
             "source_type": "App Store Review",

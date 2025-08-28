@@ -169,8 +169,12 @@ def compute_metrics(processing_log: pd.DataFrame,
         metrics[k.lower().replace(" ", "_")] = int((processing_log["category"] == k).sum())
     metrics["avg_confidence"] = float(processing_log["confidence"].mean() if len(processing_log) else 0.0)
     if expected is not None and "category" in expected.columns:
+        # Ensure source_id columns are both string type
+        processing_log["source_id"] = processing_log["source_id"].astype(str)
+        expected["source_id"] = expected["source_id"].astype(str)
         merged = processing_log.merge(expected, on="source_id", suffixes=("", "_expected"))
         if "category_expected" in merged.columns:
             acc = (merged["category"] == merged["category_expected"]).mean() if len(merged) else 0.0
             metrics["category_accuracy"] = float(acc)
+    print((metrics))
     return pd.DataFrame([metrics])
