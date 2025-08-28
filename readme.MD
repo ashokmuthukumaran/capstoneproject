@@ -9,7 +9,7 @@ Gracefully falls back to deterministic rules if `GEMINI_API_KEY` is not set.
 - Deterministic fallback rules keep it runnable offline
 - Streamlit UI for monitoring & manual overrides
 - Traceability via `source_id` and CSV logs
-![Architecture Design](arcdesign.png)
+![Architecture Design](archdesign.png)
 ## Setup
 ```bash
 1) Put `app_store_reviews.csv` (you already have one) next to these files.
