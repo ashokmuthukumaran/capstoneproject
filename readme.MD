@@ -3,9 +3,6 @@
 ##Business Problem 
 Modern SaaS and app-based companies receive dozens of reviews and other user feedback every day from multiple channels, including app stores such as Google Play and the Apple App Store, customer support emails, and user surveys. Manual triage is slow, inconsistent, and not scalable, leading to missed critical bugs, delayed feature requests, and uneven prioritization across teams.
 
-Multi-agent pipeline using **AutoGen** for orchestration and **Google Gemini** for the core reasoning.
-Gracefully falls back to deterministic rules if `GEMINI_API_KEY` is not set.
-
 # AutoGen + Gemini Feedback System
 
 Multi-agent pipeline using **AutoGen** for orchestration and **Google Gemini** for the core reasoning.
